@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TextInput } from 'react-native';
-
 import Animated, { Easing } from 'react-native-reanimated';
-import { TapGestureHandler, State } from 'react-native-gesture-handler';
-
+import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
 import Svg,{Image,Circle,ClipPath} from 'react-native-svg';
 
 const { width, height } = Dimensions.get('window');
@@ -54,7 +52,7 @@ function runTiming(clock, value, dest) {
     state.position
   ]);
 }
-class NikeApp extends Component {
+class Index extends Component {
   constructor() {
     super();
 
@@ -122,96 +120,96 @@ class NikeApp extends Component {
 
   }
   render() {
-
+    const navigation = this.props.navigation;
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'white',
-          justifyContent: 'flex-end'
-        }}
-      >
-        <Animated.View
+        <View
           style={{
-            ...StyleSheet.absoluteFill,
-            transform: [{ translateY: this.bgY }]
+            flex: 1,
+            backgroundColor: 'white',
+            justifyContent: 'flex-end'
           }}
         >
-        <Svg height={height+50} width={width}>
-          <ClipPath id="clip">
-            <Circle r = {height+50} cx={width/2}/>
-          </ClipPath>
-          <Image
-            href={require('../src/img/bg.jpg')}
-            width={width}
-            height={height+50}
-            preserveAspectRatio='xMidYMid slice'
-            clipPath="url(#clip)"
-          />
-        </Svg>
-        </Animated.View>
-        <View style={{ height: height / 3, justifyContent: 'center' }}>
-          <TapGestureHandler onHandlerStateChange={this.onStateChange}>
+          <Animated.View
+            style={{
+              ...StyleSheet.absoluteFill,
+              transform: [{ translateY: this.bgY }]
+            }}
+          >
+          <Svg height={height+50} width={width}>
+            <ClipPath id="clip">
+              <Circle r = {height+50} cx={width/2}/>
+            </ClipPath>
+            <Image
+              href={require('../src/img/bg1.jpg')}
+              width={width}
+              height={height+50}
+              preserveAspectRatio='xMidYMid slice'
+              clipPath="url(#clip)"
+            />
+          </Svg>
+          </Animated.View>
+          <View style={{ height: height / 3, justifyContent: 'center' }}>
+            <TapGestureHandler onHandlerStateChange={this.onStateChange}>
+              <Animated.View
+                style={{
+                  ...styles.button,
+                  opacity: this.buttonOpacity,
+                  transform: [{ translateY: this.buttonY }]
+                }}
+              >
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>SIGN IN</Text>
+              </Animated.View>
+            </TapGestureHandler>
             <Animated.View
               style={{
                 ...styles.button,
+                backgroundColor: '#2E71DC',
                 opacity: this.buttonOpacity,
                 transform: [{ translateY: this.buttonY }]
               }}
             >
-              <Text style={{ fontSize: 20, fontWeight: 'bold' }}>SIGN IN</Text>
+              <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>
+                SIGN IN WITH FACEBOOK
+              </Text>
             </Animated.View>
-          </TapGestureHandler>
-          <Animated.View
-            style={{
-              ...styles.button,
-              backgroundColor: '#2E71DC',
-              opacity: this.buttonOpacity,
-              transform: [{ translateY: this.buttonY }]
-            }}
-          >
-            <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>
-              SIGN IN WITH FACEBOOK
-            </Text>
-          </Animated.View>
-          <Animated.View 
-            style={{
-              zIndex:this.textInputZindex, 
-              opacity:this.textInputOpacity,
-              transform:[{translateY:this.textInputY}],
-              height:height/3,
-              ...StyleSheet.absoluteFill, 
-              top:null, 
-              justifyContent:'center'
-            }}
-          >
-          <TapGestureHandler onHandlerStateChange={this.onCloseState}>
-            <Animated.View style={styles.closeButton}>
-              <Animated.Text style={{fontSize:15, transform:[{rotate:concat(this.rotateCross,'deg')}]}}>
-                X
-              </Animated.Text>
+            <Animated.View 
+              style={{
+                zIndex:this.textInputZindex, 
+                opacity:this.textInputOpacity,
+                transform:[{translateY:this.textInputY}],
+                height:height/3,
+                ...StyleSheet.absoluteFill, 
+                top:null, 
+                justifyContent:'center'
+              }}
+            >
+            <TapGestureHandler onHandlerStateChange={this.onCloseState}>
+              <Animated.View style={styles.closeButton}>
+                <Animated.Text style={{fontSize:15, transform:[{rotate:concat(this.rotateCross,'deg')}]}}>
+                  X
+                </Animated.Text>
+              </Animated.View>
+            </TapGestureHandler>
+              <TextInput
+                placeholder="Email"
+                style={styles.textInput}
+                placeholderTextColor="black"
+              />
+              <TextInput
+                placeholder="Password"
+                style={styles.textInput}
+                placeholderTextColor="black"
+              />
+              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+                <Text style={{fontSize:20, fontWeight: 'bold'}}>SIGN IN</Text>
+              </TouchableOpacity>
             </Animated.View>
-          </TapGestureHandler>
-            <TextInput
-              placeholder="Email"
-              style={styles.textInput}
-              placeholderTextColor="black"
-            />
-            <TextInput
-              placeholder="Password"
-              style={styles.textInput}
-              placeholderTextColor="black"
-            />
-            <Animated.View style={styles.button}>
-              <Text style={{fontSize:20, fontWeight: 'bold'}}>SIGN IN</Text>
-            </Animated.View>
-          </Animated.View>
+          </View>
         </View>
-      </View>
     );
   }
 }
-export default NikeApp;
+export default Index;
 
 const styles = StyleSheet.create({
   container: {

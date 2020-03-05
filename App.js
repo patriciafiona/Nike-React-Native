@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
-import NikeApp from './app/index';
+import AppNavigator from './app/AppNavigator';
 
 function cacheImages(images) {
   return images.map(image => {
@@ -23,7 +23,7 @@ export default class App extends React.Component {
   }
 
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require('./src/img/bg.jpg')]);
+    const imageAssets = cacheImages([require('./src/img/bg1.jpg')]);
 
     await Promise.all([...imageAssets]);
   }
@@ -38,7 +38,7 @@ export default class App extends React.Component {
         />
       );
     }
-    return <NikeApp/>;
+    return <AppNavigator/>;
   }
 }
 const styles = StyleSheet.create({
