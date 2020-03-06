@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Animated, { Easing } from 'react-native-reanimated';
-import { View, Text, StyleSheet, Dimensions, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, TextInput, SafeAreaView, ScrollView, ImageBackground, Image } from 'react-native';
 import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
-import Svg,{Image,Circle,ClipPath} from 'react-native-svg';
 
 const { width, height } = Dimensions.get('window');
 
@@ -122,9 +121,129 @@ class Home extends Component {
     }
     render() {
         return (
-          <View style={styles.container}>
-            <Text>We have no friends!</Text>
-          </View>
+          <SafeAreaView 
+            style={{
+              flex: 1,
+              backgroundColor: 'white',
+              justifyContent: 'flex-end'
+            }}
+          >
+            <ScrollView>
+              <ImageBackground source={require('../src/img/Homes/h2.jpg')} style={styles.bg_img}>
+                <View style={styles.navbar}>
+                  <Image source={require('../src/img/NikeLogo.png')} style={styles.logo}/>
+                </View>
+                <View style={styles.bannerContent}>
+                  <Text style={{ fontSize: 40, fontWeight: 'bold', color: 'white' }}>Never Give Up</Text>
+                  <Text style={{ fontSize: 20, color: 'white' }}>Never Give Up</Text>
+                </View>
+              </ImageBackground>
+
+              <View style={styles.home_container}>
+                <Text style={styles.product_title}>New Shoes</Text>
+                <View style={styles.home_menu}>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shoes/Kyrie_Low_2/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Kyrie Low 2</Text>
+                      <Text style={styles.product_t14}>Rp.1.500.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shoes/LeBron_17/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>LeBron 17</Text>
+                      <Text style={styles.product_t14}>Rp.1.250.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View style={styles.home_menu}>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shoes/Nike_Air_VaporMax_360/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Air VaporMax 360</Text>
+                      <Text style={styles.product_t14}>Rp.1.125.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shoes/Nike_React_Infinity_Run_Flyknit/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike React Infinity Run Flyknit</Text>
+                      <Text style={styles.product_t14}>Rp.1.890.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
+                <Text style={styles.product_title}>New Shorts</Text>
+                <View style={styles.home_menu}>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shorts/Nike_Challenger/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Challenger</Text>
+                      <Text style={styles.product_t14}>Rp.350.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shorts/Nike_Dri-FIT/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Dri-FIT</Text>
+                      <Text style={styles.product_t14}>Rp.250.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View style={styles.home_menu}>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shorts/Nike_Flex_Stride/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Flex Stride</Text>
+                      <Text style={styles.product_t14}>Rp.780.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Mens/Shorts/Nike_x_Pigalle/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike_x_Pigalle</Text>
+                      <Text style={styles.product_t14}>Rp.490.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
+                <Text style={styles.product_title}>New Sport Bra</Text>
+                <View style={styles.home_menu}>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Womens/SportBra/Nike_Air_Swoosh/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Air Swoosh</Text>
+                      <Text style={styles.product_t14}>Rp.750.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Womens/SportBra/Nike_Indy/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Indy</Text>
+                      <Text style={styles.product_t14}>Rp.1.350.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View style={styles.home_menu}>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Womens/SportBra/Nike_Swoosh/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Swoosh</Text>
+                      <Text style={styles.product_t14}>Rp.950.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.home_menu_col}>
+                    <TouchableOpacity>
+                      <Image source={require('../src/img/Womens/SportBra/Nike_Swoosh_Ultra_Breathe/s1.jpg')} style={styles.product_disp}/>
+                      <Text style={styles.product_t20}>Nike Swoosh Ultra Breathe</Text>
+                      <Text style={styles.product_t14}>Rp.1.200.000</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </ScrollView>
+          </SafeAreaView>
         );
     }
 }
@@ -137,6 +256,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  bg_img:{
+    height: 400,
+    width: width,
+    justifyContent: 'flex-start',
+  },
+  navbar:{
+    width: width,
+    height: 40,
+    marginTop:20,
+  },
+  logo:{
+    width: 50,
+    height:40,
+    margin:20,
+  },
+  bannerContent:{
+    width: width,
+    height: 180,
+    marginTop:200,
+    padding:20,
+  },
   button: {
     backgroundColor: 'white',
     height: 70,
@@ -147,25 +287,41 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     elevation: 1
   },
-  closeButton:{
-    height:40,
-    width:40,
-    backgroundColor: 'white',
-    borderRadius:20,
-    alignItems: 'center',
+  home_container:{
+    flex: 1,
+    justifyContent: 'flex-start',
+    marginBottom:100,
+  },
+  home_menu:{
+    flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
-    position: 'absolute',
-    top: -20,
-    left: width / 2 - 20,
-    elevation: 1
+    alignItems: 'center',
   },
-  textInput:{
-    height:50,
-    borderRadius:25,
-    borderWidth:0.5,
-    marginHorizontal:20,
-    paddingLeft:10,
-    marginVertical:5,
-    borderColor: 'rgba(0,0,0,0.2)'
+
+  home_menu_col:{
+    width: 200,
+    height: 270,
+    margin:10
   },
+  product_title:{
+    marginHorizontal:30,
+    marginTop:20,
+    fontSize: 30,
+  },
+  product_disp:{
+    width:200,
+    height:200,
+    borderRadius:30,
+  },
+  product_t20:{
+    fontWeight: 'bold',
+    fontSize:20,
+    marginHorizontal:10,
+    marginTop:10,
+  },
+  product_t14:{
+    fontSize:14,
+    marginHorizontal:10,
+  }
 });

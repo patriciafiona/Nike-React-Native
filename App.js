@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
-import AppNavigator from './app/AppNavigator';
+import AppNavigator from './app/Navigator/AppNavigator';
 
 function cacheImages(images) {
   return images.map(image => {

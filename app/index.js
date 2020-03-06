@@ -172,6 +172,20 @@ class Index extends Component {
                 SIGN IN WITH FACEBOOK
               </Text>
             </Animated.View>
+            <Animated.View
+              style={{
+                ...styles.button,
+                backgroundColor: 'none',
+                opacity: this.buttonOpacity,
+                transform: [{ translateY: this.buttonY }]
+              }}
+            >
+              <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>
+                  Don't Have an Account? Sign Up
+                </Text>
+              </TouchableOpacity>
+            </Animated.View>
             <Animated.View 
               style={{
                 zIndex:this.textInputZindex, 
