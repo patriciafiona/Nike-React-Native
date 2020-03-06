@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Dimensions, TextInput } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
 import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
 import Svg,{Image,Circle,ClipPath} from 'react-native-svg';
+import { NavigationEvents } from 'react-navigation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -135,20 +136,29 @@ class Index extends Component {
               transform: [{ translateY: this.bgY }]
             }}
           >
-          <Svg height={height+50} width={width}>
-            <ClipPath id="clip">
-              <Circle r = {height+50} cx={width/2}/>
-            </ClipPath>
-            <Image
-              href={require('../src/img/bg1.jpg')}
-              width={width}
-              height={height+50}
-              preserveAspectRatio='xMidYMid slice'
-              clipPath="url(#clip)"
-            />
-          </Svg>
+            <Svg height={height+50} width={width}>
+              <ClipPath id="clip">
+                <Circle r = {height+50} cx={width/2}/>
+              </ClipPath>
+              <Image
+                href={require('../src/img/bg1.jpg')}
+                width={width}
+                height={height+50}
+                preserveAspectRatio='xMidYMid slice'
+                clipPath="url(#clip)"
+              />
+            </Svg>
           </Animated.View>
-          <View style={{ height: height / 3, justifyContent: 'center' }}>
+          <View style={{ height: height / 1.5, justifyContent: 'center' }}>
+            <Animated.Image
+              source={require('../src/img/NikeLogo_White.png')}
+              style={{
+                ...styles.img_logo,
+                opacity: this.buttonOpacity,
+                transform: [{ translateY: this.buttonY }]
+              }}
+            >
+            </Animated.Image>
             <TapGestureHandler onHandlerStateChange={this.onStateChange}>
               <Animated.View
                 style={{
@@ -261,5 +271,12 @@ const styles = StyleSheet.create({
     paddingLeft:10,
     marginVertical:5,
     borderColor: 'rgba(0,0,0,0.2)'
+  },
+  img_logo:{
+    width:width,
+    height: (height/2) - 300,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:150,
   },
 });
