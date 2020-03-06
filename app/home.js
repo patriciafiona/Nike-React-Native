@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Animated, { Easing } from 'react-native-reanimated';
-import { View, Text, StyleSheet, Dimensions, TextInput, SafeAreaView, ScrollView, ImageBackground, Image } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, SafeAreaView, ScrollView, ImageBackground, Image } from 'react-native';
 import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
 
 const { width, height } = Dimensions.get('window');
@@ -135,112 +135,106 @@ class Home extends Component {
                 </View>
                 <View style={styles.bannerContent}>
                   <Text style={{ fontSize: 40, fontWeight: 'bold', color: 'white' }}>Never Give Up</Text>
-                  <Text style={{ fontSize: 20, color: 'white' }}>Never Give Up</Text>
+                  <Text style={{ fontSize: 20, color: 'white' }}>We're Always Be Your Side</Text>
                 </View>
               </ImageBackground>
 
+              {/* Bagian Product Display */}
               <View style={styles.home_container}>
                 <Text style={styles.product_title}>New Shoes</Text>
-                <View style={styles.home_menu}>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shoes/Kyrie_Low_2/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Kyrie Low 2</Text>
-                      <Text style={styles.product_t14}>Rp.1.500.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shoes/LeBron_17/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>LeBron 17</Text>
-                      <Text style={styles.product_t14}>Rp.1.250.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-                <View style={styles.home_menu}>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shoes/Nike_Air_VaporMax_360/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Air VaporMax 360</Text>
-                      <Text style={styles.product_t14}>Rp.1.125.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shoes/Nike_React_Infinity_Run_Flyknit/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike React Infinity Run Flyknit</Text>
-                      <Text style={styles.product_t14}>Rp.1.890.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
+                <ScrollView horizontal={true} style={styles.product_container}>
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shoes/Kyrie_Low_2/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Kyrie Low 2</Text>
+                    <Text style={styles.product_t14}>Rp.1.500.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shoes/LeBron_17/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>LeBron 17</Text>
+                    <Text style={styles.product_t14}>Rp.1.250.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shoes/Nike_Air_VaporMax_360/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Air VaporMax 360</Text>
+                    <Text style={styles.product_t14}>Rp.1.125.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shoes/Nike_React_Infinity_Run_Flyknit/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike React Infinity Run Flyknit</Text>
+                    <Text style={styles.product_t14}>Rp.1.890.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.seeAllBtn}>
+                    <Text style={{fontSize:20, color: 'gray'}}>See All</Text>
+                  </TouchableOpacity>
+                </ScrollView>
 
                 <Text style={styles.product_title}>New Shorts</Text>
-                <View style={styles.home_menu}>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shorts/Nike_Challenger/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Challenger</Text>
-                      <Text style={styles.product_t14}>Rp.350.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shorts/Nike_Dri-FIT/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Dri-FIT</Text>
-                      <Text style={styles.product_t14}>Rp.250.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-                <View style={styles.home_menu}>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shorts/Nike_Flex_Stride/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Flex Stride</Text>
-                      <Text style={styles.product_t14}>Rp.780.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Mens/Shorts/Nike_x_Pigalle/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike_x_Pigalle</Text>
-                      <Text style={styles.product_t14}>Rp.490.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
+                <ScrollView horizontal={true} style={styles.product_container}>
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_Challenger/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Challenger</Text>
+                    <Text style={styles.product_t14}>Rp.350.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_Dri-FIT/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Dri-FIT</Text>
+                    <Text style={styles.product_t14}>Rp.250.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_Flex_Stride/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Flex Stride</Text>
+                    <Text style={styles.product_t14}>Rp.780.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_x_Pigalle/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike x Pigalle</Text>
+                    <Text style={styles.product_t14}>Rp.650.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.seeAllBtn}>
+                    <Text style={{fontSize:20, color: 'gray'}}>See All</Text>
+                  </TouchableOpacity>
+                </ScrollView>
 
                 <Text style={styles.product_title}>New Sport Bra</Text>
-                <View style={styles.home_menu}>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Womens/SportBra/Nike_Air_Swoosh/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Air Swoosh</Text>
-                      <Text style={styles.product_t14}>Rp.750.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Womens/SportBra/Nike_Indy/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Indy</Text>
-                      <Text style={styles.product_t14}>Rp.1.350.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-                <View style={styles.home_menu}>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Womens/SportBra/Nike_Swoosh/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Swoosh</Text>
-                      <Text style={styles.product_t14}>Rp.950.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={styles.home_menu_col}>
-                    <TouchableOpacity>
-                      <Image source={require('../src/img/Womens/SportBra/Nike_Swoosh_Ultra_Breathe/s1.jpg')} style={styles.product_disp}/>
-                      <Text style={styles.product_t20}>Nike Swoosh Ultra Breathe</Text>
-                      <Text style={styles.product_t14}>Rp.1.200.000</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
+
+                <ScrollView horizontal={true} style={styles.product_container}>
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Womens/SportBra/Nike_Air_Swoosh/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Air Swoosh</Text>
+                    <Text style={styles.product_t14}>Rp.750.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Womens/SportBra/Nike_Indy/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Indy</Text>
+                    <Text style={styles.product_t14}>Rp.1.350.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Womens/SportBra/Nike_Swoosh/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Swoosh</Text>
+                    <Text style={styles.product_t14}>Rp.950.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.product_btn}>
+                    <Image source={require('../src/img/Womens/SportBra/Nike_Swoosh_Ultra_Breathe/s1.jpg')} style={styles.product_disp}/>
+                    <Text style={styles.product_t20}>Nike Swoosh Ultra Breathe</Text>
+                    <Text style={styles.product_t14}>Rp.1.200.000</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.seeAllBtn}>
+                    <Text style={{fontSize:20, color: 'gray'}}>See All</Text>
+                  </TouchableOpacity>
+                </ScrollView>
+
               </View>
             </ScrollView>
           </SafeAreaView>
@@ -257,7 +251,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   bg_img:{
-    height: 400,
+    height: height-550,
     width: width,
     justifyContent: 'flex-start',
   },
@@ -277,37 +271,28 @@ const styles = StyleSheet.create({
     marginTop:200,
     padding:20,
   },
-  button: {
-    backgroundColor: 'white',
-    height: 70,
-    marginHorizontal: 20,
-    borderRadius: 35,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 5,
-    elevation: 1
-  },
   home_container:{
     flex: 1,
     justifyContent: 'flex-start',
-    marginBottom:100,
-  },
-  home_menu:{
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginBottom:80,
   },
 
-  home_menu_col:{
-    width: 200,
-    height: 270,
-    margin:10
+  //Bagian Product Display
+  product_container:{
+    height:310,
+    width: width-40,
+    margin:20,
+  },
+  product_btn:{
+    marginHorizontal:10,
+    height:300,
+    width: 220,
   },
   product_title:{
     marginHorizontal:30,
     marginTop:20,
     fontSize: 30,
+    fontWeight: 'bold',
   },
   product_disp:{
     width:200,
@@ -315,6 +300,7 @@ const styles = StyleSheet.create({
     borderRadius:30,
   },
   product_t20:{
+    width:200,
     fontWeight: 'bold',
     fontSize:20,
     marginHorizontal:10,
@@ -323,5 +309,13 @@ const styles = StyleSheet.create({
   product_t14:{
     fontSize:14,
     marginHorizontal:10,
-  }
+  },
+  seeAllBtn:{
+    width:200,
+    height:200,
+    borderRadius:30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ededed',
+  },
 });
