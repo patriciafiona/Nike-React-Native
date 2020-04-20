@@ -175,25 +175,25 @@ class Home extends Component {
                 <Text style={styles.product_title}>New Shorts</Text>
                 <ScrollView horizontal={true} style={styles.product_container}>
                   <TouchableOpacity style={styles.product_btn}>
-                    <Image source={require('../src/img/Mens/Shorts/Nike_Challenger/s1.jpg')} style={styles.product_disp}/>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_Challenger/1.jpg')} style={styles.product_disp}/>
                     <Text style={styles.product_t20}>Nike Challenger</Text>
                     <Text style={styles.product_t14}>Rp.350.000</Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity style={styles.product_btn}>
-                    <Image source={require('../src/img/Mens/Shorts/Nike_Dri-FIT/s1.jpg')} style={styles.product_disp}/>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_Dri-FIT/1.jpg')} style={styles.product_disp}/>
                     <Text style={styles.product_t20}>Nike Dri-FIT</Text>
                     <Text style={styles.product_t14}>Rp.250.000</Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity style={styles.product_btn}>
-                    <Image source={require('../src/img/Mens/Shorts/Nike_Flex_Stride/s1.jpg')} style={styles.product_disp}/>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_Flex_Stride/1.jpg')} style={styles.product_disp}/>
                     <Text style={styles.product_t20}>Nike Flex Stride</Text>
                     <Text style={styles.product_t14}>Rp.780.000</Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity style={styles.product_btn}>
-                    <Image source={require('../src/img/Mens/Shorts/Nike_x_Pigalle/s1.jpg')} style={styles.product_disp}/>
+                    <Image source={require('../src/img/Mens/Shorts/Nike_x_Pigalle/1.jpg')} style={styles.product_disp}/>
                     <Text style={styles.product_t20}>Nike x Pigalle</Text>
                     <Text style={styles.product_t14}>Rp.650.000</Text>
                   </TouchableOpacity>
