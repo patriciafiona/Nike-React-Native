@@ -3,6 +3,12 @@ import Animated, { Easing } from 'react-native-reanimated';
 import { View, Text, StyleSheet, Dimensions, SafeAreaView, ScrollView, ImageBackground, Image } from 'react-native';
 import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
 
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://10.0.2.2:3000/products'
+})
+
 const { width, height } = Dimensions.get('window');
 
 const {
@@ -55,6 +61,10 @@ function runTiming(clock, value, dest) {
 class Home extends Component {
     constructor() {
       super();
+
+      api.get('/').then(res => {
+        console.log(res.data)
+      })
   
       this.buttonOpacity = new Value(1);
   
@@ -117,8 +127,10 @@ class Home extends Component {
         outputRange: [180, 360],
         extrapolate: Extrapolate.CLAMP
       });
-
     }
+
+    
+
     render() {
         return (
           <SafeAreaView 
