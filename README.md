@@ -10,6 +10,8 @@ Project Nike - React Native ini adalah kesatuan dari project belajar membuat Nik
 3. REST API - Express API JS
 (Link: https://github.com/patriciafiona/Nike-Laravel-and-Express)
 
+Status: Still On Progress
+
 ---------------------------------------------------------------------------------------------------------------------------------
 
 ## A. Preview Apps
