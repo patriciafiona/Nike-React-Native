@@ -5,6 +5,13 @@ import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
 import AppNavigator from './app/Navigator/AppNavigator';
 
+import  { Provider } from 'react-redux';
+import  { ConfigureStore} from './app/Redux/configureStore';
+import { PersistGate } from 'redux-persist/es/integration/react';
+import { Loading } from './app/LoadingComponent';
+
+const {persistor, store} = ConfigureStore();
+
 function cacheImages(images) {
   return images.map(image => {
     if (typeof image === 'string') {
@@ -29,6 +36,10 @@ export default class App extends React.Component {
   }
 
   render() {
+
+    //Hide Yellow Warning
+    console.disableYellowBox = true;
+    
     if (!this.state.isReady) {
       return (
         <AppLoading
@@ -38,7 +49,11 @@ export default class App extends React.Component {
         />
       );
     }
-    return <AppNavigator/>;
+    return (
+      <Provider store={store}>
+        <AppNavigator/>
+      </Provider>
+      );
   }
 }
 const styles = StyleSheet.create({
